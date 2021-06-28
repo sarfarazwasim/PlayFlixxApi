@@ -1,0 +1,37 @@
+
+.adimg {
+    transition: transform .5s; /* Animation */
+    width: 280px;
+    height: 200px;
+    background-color: transparent;
+    border-radius: 0px;
+  }
+  .adimg:hover {
+   
+    transform: scale(1);
+  }
+  .slick1-slide {
+    min-height:200px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+}
+.slick1-slide img {
+   
+    box-sizing: border-box;
+    border: 0px;
+}
+  
+  .ad {
+      transition: transform .5s; /* Animation */
+      margin-bottom: 4.6%;
+      background-color: transparent;
+      z-index: -1;
+    }
+    .ad:hover {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+  
+   

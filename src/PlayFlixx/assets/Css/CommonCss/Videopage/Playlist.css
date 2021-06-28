@@ -1,0 +1,53 @@
+
+.sharper {
+  transition: transform .5s; /* Animation */
+  width: 160px;
+  height: 80px;
+  margin: 3%;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.sharper:hover {
+ 
+  transform: scale(1);
+}
+
+
+.zoomer {
+    transition: transform .5s; /* Animation */
+    margin-bottom: 4.6%;
+    background-color: transparent;
+    z-index: -1;
+  }
+  .zoomer:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+
+  .container3 {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .container3 .btn3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    text-align: center;
+    opacity: 0;
+  }
+  
+  .container3 .btn3:hover {
+    opacity: 1;
+    color: #ffffff;
+    background-color: #5858582f;
+  }

@@ -1,0 +1,73 @@
+ 
+.round {
+  transition: transform .5s; /* Animation */
+  width: 180px;
+  height: 180px;
+  margin: 3%;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.round:hover {
+ 
+  transform: scale(1);
+}
+
+.slick-slide {
+    height: auto;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    outline: none;
+    width: 200px;
+}
+
+.slick-slide  {
+   
+    box-sizing: border-box;
+    border-radius: 30px;
+    border: 0px;
+}
+
+.zoomround {
+    transition: transform .5s; /* Animation */
+    margin-bottom: 4.6%;
+    background-color: transparent;
+    z-index: -1;
+  }
+  .zoomround:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+     /*display:none;*/
+
+     opacity: 0.3;
+  }
+
+
+  .containerround {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .containerround .btnround {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0;
+  }
+  
+  .containerround .btnround:hover {
+    opacity: 1;
+    color: #ffffff;
+    background-color: #5858582f;
+  }

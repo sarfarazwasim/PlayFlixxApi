@@ -1,0 +1,124 @@
+                             >>>>Welcome to PlayFlixx >>>>
+	              This is PlayFlixx Back_End
+
+This is Full Backend Process of PlayFlixx. Here we Clearly Discuss what we did in Backend.
+Let's Start >>
+
+This Backend is fully dynamic. Before start explaining here are some important things.
+1. Entity :  The entities are the persistence objects stores as a record in the database. 
+Persistence Unit: It defines a set of all entity classes. In an application, EntityManager
+ instances manage it. The set of entity classes represents the data contained within a single data store.
+2. Controller : In Spring Boot, the controller class is responsible for processing incoming
+ REST API requests, preparing a model, and returning the view to be rendered as a response. ...
+  These mark controller classes as a request handler to allow Spring to recognize it as a RESTful
+   service during runtime.
+3. Dao(Repository): Data Access Object Pattern or DAO pattern is used to separate low level data accessing
+ API or operations from high level business services. This class is responsible to get data from a data source
+  which can be database / xml or any other storage mechanism.
+4. Helper : 
+5. Service
+6. Configure
+7. Filestore
+
+-----------------------------------
+|##REST API##|
+-----------------------------------
+GET                   (For Getting from Database)
+POST                (For Save to Database)
+PUT                   (Update the Database)
+DELETE        (Delete to Database)
+
+-------------------------------------------
+|##List Of All Api's##|
+-------------------------------------------
+
+##SkipController##
+(For UnRegistered User/ First Time Visit to Website)
+
+@PostMapping ("/skip")
+Here we use (skip) Controller to get user Data such as (Ip Address,OS Version, Used Phone Name, 
+Used Device, Used Browser) for Further use.
+For Skip we create an Entity class for that to collect data from User and store to a temporary database.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+##UserController## |
+-----------------------------------------
+(For Registration and Login)
+This Controller is used to collect user data from Register form and secuerly store to Databse.
+If someone first time visit to website at that time Skip controller is called and store to temporary 
+databse, if that user register to website at that time we verify that skip user and collect skip database 
+and store to UserDatabase without Recollection of Skip Information.
+
+@PostMapping("/test") (This is for Testing purpose of PostMapping)
+@GetMapping("/test") (This is for Testing purpose of GetMapping)
+@PostMapping("/register") 
+This Post Mapping is used for collecting user information from frontend and store to UserDatabase.
+This api collect data and store to User Entity and then store to Databse by using UserDao.
+
+@GetMapping("/allusers")
+This Api is used for Getting all users stored in the userdatabase.
+
+@PostMapping("/login1")
+This Api is used for Login purpose. At this time user must pass their token to Login successfully, 
+if token is invalid then user is denied.
+
+@PutMapping("/aboutme/{UserId}")
+This is Profile Api means, if user wants to update their data in profile at that time this Api will 
+call and update that data to databse.
+
+@GetMapping("/aboutme/{UserId}")
+This GetMapping is used to retrive all the data of a perticular user through UserId.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+##ChannelController##  |
+------------------------------------------------
+This Controller is for Creating a channel. If user wants to create Channel then they must pass their 
+UserId, then channel create successfully.
+
+@PostMapping("/createchannel/{UserId}")
+This Api is Used for Creating Channel. If user wants to create  channel then user must pass their 
+UserId to successfully creation.
+This PostMapping is Automatically create channel folder through theirid. This folder is used for 
+store channel data such as(Video file, Trailer, Image, Gif, Other Data).
+
+@GetMapping("/allchannels")
+This GetMapping retrive all Channel List Store in the database
+
+@GetMapping("/listchannel/{UserId}")
+This Api is used to retrive a list of channels of a perticular user by UserId.
+
+@DeleteMapping("/deletechannel/{UserId}")
+If User wants to delete their channel at that time this Api is called and successfully deleted that channel.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+##PlayListController##  |
+-------------------------------------------------
+This Controller is used to retrive user PlayList section and create a PlayList.
+
+@PostMapping("/createPoster")
+This Api is used for Poster means to store poster of a PlayList.
+
+@PostMapping("/createPlaylist")
+If User wants to create PlayList at That time this Api is called to create PlayList.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+##VideoController##  |
+-------------------------------------------
+This is Most Impotant Controller. This Controller Handle all Video Store, retrive and delete function.
+
+@PostMapping("/{UserId}/{ChannelId}/uploadvideo")
+If User wants to upload video for their channel at that time this Mapping is called.
+
+@GetMapping("/getallvideolist")
+For GetAll video list store in the database by calling this Api.
+
+@GetMapping("/{UserId}/getallvideolist")
+For getting all video list of a perticular user. This Api will call.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+##CommentsController## |
+----------------------------------------------------
+This Controller is getting all comments in the video and store to database.
+
+@PostMapping("/comments")
+If user cooments in a video at that time this Api will call.
